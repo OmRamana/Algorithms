@@ -1,0 +1,16 @@
+Google collab
+VS code
+React
+React-BootStrap
+Django
+Python
+https://react-bootstrap.github.io/
+https://getbootstrap.com/
+https://bootswatch.com/
+https://github.com/thomaspark/bootswatch/
+
+Making ApI requests
+https://docs.python-requests.org/en/latest/
+
+
+

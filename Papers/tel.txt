@@ -1,0 +1,94 @@
+Microsoft Windows [Version 10.0.19042.1466]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\OM>cd desktop
+
+C:\Users\OM\Desktop>cd TelePsycRX_CRA_Backend2
+
+C:\Users\OM\Desktop\TelePsycRX_CRA_Backend2>dir
+ Volume in drive C is OS
+ Volume Serial Number is 7CCF-A14C
+
+ Directory of C:\Users\OM\Desktop\TelePsycRX_CRA_Backend2
+
+2022/01/15  09:53    <DIR>          .
+2022/01/15  09:53    <DIR>          ..
+2022/01/15  09:55    <DIR>          TelePsycRX_CRA_Backend
+               0 File(s)              0 bytes
+               3 Dir(s)  423 997 677 568 bytes free
+
+C:\Users\OM\Desktop\TelePsycRX_CRA_Backend2>cd TelePsycRX_CRA_Backend
+
+C:\Users\OM\Desktop\TelePsycRX_CRA_Backend2\TelePsycRX_CRA_Backend>pip install djangorestframework
+Collecting djangorestframework
+  Downloading djangorestframework-3.13.1-py3-none-any.whl (958 kB)
+     |████████████████████████████████| 958 kB 598 kB/s
+Collecting pytz
+  Downloading pytz-2021.3-py2.py3-none-any.whl (503 kB)
+     |████████████████████████████████| 503 kB 1.3 MB/s
+Requirement already satisfied: django>=2.2 in c:\users\om\appdata\local\programs\python\python310\lib\site-packages (from djangorestframework) (4.0.1)
+Requirement already satisfied: tzdata in c:\users\om\appdata\local\programs\python\python310\lib\site-packages (from django>=2.2->djangorestframework) (2021.5)
+Requirement already satisfied: sqlparse>=0.2.2 in c:\users\om\appdata\local\programs\python\python310\lib\site-packages (from django>=2.2->djangorestframework) (0.4.2)
+Requirement already satisfied: asgiref<4,>=3.4.1 in c:\users\om\appdata\local\programs\python\python310\lib\site-packages (from django>=2.2->djangorestframework) (3.4.1)
+Installing collected packages: pytz, djangorestframework
+Successfully installed djangorestframework-3.13.1 pytz-2021.3
+WARNING: You are using pip version 21.2.4; however, version 21.3.1 is available.
+You should consider upgrading via the 'C:\Users\OM\AppData\Local\Programs\Python\Python310\python.exe -m pip install --upgrade pip' command.
+
+C:\Users\OM\Desktop\TelePsycRX_CRA_Backend2\TelePsycRX_CRA_Backend>pip install markdown
+Collecting markdown
+  Downloading Markdown-3.3.6-py3-none-any.whl (97 kB)
+     |████████████████████████████████| 97 kB 369 kB/s
+Installing collected packages: markdown
+Successfully installed markdown-3.3.6
+WARNING: You are using pip version 21.2.4; however, version 21.3.1 is available.
+You should consider upgrading via the 'C:\Users\OM\AppData\Local\Programs\Python\Python310\python.exe -m pip install --upgrade pip' command.
+
+C:\Users\OM\Desktop\TelePsycRX_CRA_Backend2\TelePsycRX_CRA_Backend>pip install django-filter
+Collecting django-filter
+  Downloading django_filter-21.1-py3-none-any.whl (81 kB)
+     |████████████████████████████████| 81 kB 642 kB/s
+Requirement already satisfied: Django>=2.2 in c:\users\om\appdata\local\programs\python\python310\lib\site-packages (from django-filter) (4.0.1)
+Requirement already satisfied: asgiref<4,>=3.4.1 in c:\users\om\appdata\local\programs\python\python310\lib\site-packages (from Django>=2.2->django-filter) (3.4.1)
+Requirement already satisfied: sqlparse>=0.2.2 in c:\users\om\appdata\local\programs\python\python310\lib\site-packages (from Django>=2.2->django-filter) (0.4.2)
+Requirement already satisfied: tzdata in c:\users\om\appdata\local\programs\python\python310\lib\site-packages (from Django>=2.2->django-filter) (2021.5)
+Installing collected packages: django-filter
+Successfully installed django-filter-21.1
+WARNING: You are using pip version 21.2.4; however, version 21.3.1 is available.
+You should consider upgrading via the 'C:\Users\OM\AppData\Local\Programs\Python\Python310\python.exe -m pip install --upgrade pip' command.
+
+C:\Users\OM\Desktop\TelePsycRX_CRA_Backend2\TelePsycRX_CRA_Backend>python manage.py runserver
+Watching for file changes with StatReloader
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "C:\Users\OM\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1009, in _bootstrap_inner
+    self.run()
+  File "C:\Users\OM\AppData\Local\Programs\Python\Python310\lib\threading.py", line 946, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\OM\AppData\Local\Programs\Python\Python310\lib\site-packages\django\utils\autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "C:\Users\OM\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\management\commands\runserver.py", line 115, in inner_run
+    autoreload.raise_last_exception()
+  File "C:\Users\OM\AppData\Local\Programs\Python\Python310\lib\site-packages\django\utils\autoreload.py", line 87, in raise_last_exception
+    raise _exception[1]
+  File "C:\Users\OM\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\management\__init__.py", line 381, in execute
+    autoreload.check_errors(django.setup)()
+  File "C:\Users\OM\AppData\Local\Programs\Python\Python310\lib\site-packages\django\utils\autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "C:\Users\OM\AppData\Local\Programs\Python\Python310\lib\site-packages\django\__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "C:\Users\OM\AppData\Local\Programs\Python\Python310\lib\site-packages\django\apps\registry.py", line 91, in populate
+    app_config = AppConfig.create(entry)
+  File "C:\Users\OM\AppData\Local\Programs\Python\Python310\lib\site-packages\django\apps\config.py", line 223, in create
+    import_module(entry)
+  File "C:\Users\OM\AppData\Local\Programs\Python\Python310\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'rest_framework_simplejwt'
+
+
+cd Desktop\TelePsycRX_CRA_Backend2\TelePsycRX_CRA_Backend>
+
+python manage.py runserver

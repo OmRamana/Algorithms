@@ -1,0 +1,51 @@
+import math
+
+class Singleton:
+    def __init__(self, decorated):
+        self._decorated = decorated
+        
+    def instance(self):
+        try:
+            return self._instance
+        except AttributeError:
+                self._instance = self._decorated()
+                return self._instance
+    
+    def __call__(self):
+        raise TypeError('Singletons must be accessed through `instance()`.')
+    
+    def __instancecheck__(self, inst):
+        return isinstance(inst, self._decorated)
+ 
+@Singleton
+class Newton:
+    
+    def __init__(self):
+        print()
+    
+    def square_root(self,x):
+        tolerance = 0.000001
+        estimate = 1.0
+        while True:
+            estimate = (estimate + x / estimate) / 2
+            difference = abs(x - estimate ** 2)
+            if difference <= tolerance:
+                break
+        return estimate
+            
+    def compare(self):
+        while True:
+            x = input("Enter a positive number or enter/return to quit: ")
+            if x == "":
+                break
+            x = float(x)
+            print("The program's estimate is", self.square_root(x))
+            print("Python's estimate is", math.sqrt(x))
+            
+
+if __name__ == "__main__":
+    N = Newton.instance()
+    N.compare()
+
+
+Python makes object oriented programming look really easy to implement because almost all variables in python are objects but the advantage with java is that you see exactly why its important to use objects when doing larger applications. 

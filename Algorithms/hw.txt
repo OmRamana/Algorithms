@@ -1,0 +1,17 @@
+Copy and paste your work, or start typing.
+;we want to design a properly iterative function (two-largest n), which takes
+;as parameter an integer n, and returns the largest two digit number that can be
+;formed from the two largest digits in n.
+;No lists, assignment, vectors, strings
+
+Tensorflow Python Machine Learning
+
+Okay. For a summary, I have downloaded daily
+ summaries of precipitation data from NOAA. I 
+have attached what the files look like for 
+an example. I am trying to write a script to 
+find the 10 highest (max) precipitation values
+for 9 different files with their corresponding dates
+ and station numbers.
+
+1:5mins

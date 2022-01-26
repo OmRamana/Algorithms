@@ -1,0 +1,9 @@
+Microsoft Windows [Version 10.0.19042.1415]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\OM>git --version
+git version 2.34.1.windows.1
+
+C:\Users\OM>git config --global user.name "Om"
+
+C:\Users\OM>git config --global user.email "ramanacomfy@gmail.com"

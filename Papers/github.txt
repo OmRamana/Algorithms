@@ -1,0 +1,130 @@
+Microsoft Windows [Version 10.0.19042.1415]
+(c) Microsoft Corporation. All rights reserved.
+
+
+To set your username, type and execute these commands: git config --global user.name "YOUR_USERNAME" 
+and git config --global user.email "YOUR_EMAIL". 
+Just make sure to replace "YOUR_USERNAME" and "YOUR_EMAIL" with the values you choose.
+
+
+C:\Users\OM>cd django
+
+C:\Users\OM\django>dir
+ Volume in drive C is OS
+ Volume Serial Number is 7CCF-A14C
+
+ Directory of C:\Users\OM\django
+
+2022/01/03  09:34    <DIR>          .
+2022/01/03  09:34    <DIR>          ..
+2022/01/02  12:13    <DIR>          mysite
+2022/01/03  08:23    <DIR>          vin
+               0 File(s)              0 bytes
+               4 Dir(s)  428 634 877 952 bytes free
+
+C:\Users\OM\django>cd vin
+
+C:\Users\OM\django\vin>dir
+ Volume in drive C is OS
+ Volume Serial Number is 7CCF-A14C
+
+ Directory of C:\Users\OM\django\vin
+
+2022/01/03  08:23    <DIR>          .
+2022/01/03  08:23    <DIR>          ..
+2022/01/03  08:32    <DIR>          decode_vin
+2022/01/03  08:19    <DIR>          venv
+               0 File(s)              0 bytes
+               4 Dir(s)  428 634 583 040 bytes free
+
+C:\Users\OM\django\vin>cd decode_vin
+
+C:\Users\OM\django\vin\decode_vin>dir
+ Volume in drive C is OS
+ Volume Serial Number is 7CCF-A14C
+
+ Directory of C:\Users\OM\django\vin\decode_vin
+
+2022/01/03  08:32    <DIR>          .
+2022/01/03  08:32    <DIR>          ..
+2022/01/03  08:27           131 072 db.sqlite3
+2022/01/03  08:27    <DIR>          decode_vin
+2022/01/03  08:23               688 manage.py
+2022/01/11  10:17    <DIR>          vin_decoder
+               2 File(s)        131 760 bytes
+               4 Dir(s)  428 634 476 544 bytes free
+
+C:\Users\OM\django\vin\decode_vin>git init
+Initialized empty Git repository in C:/Users/OM/django/vin/decode_vin/.git/
+
+C:\Users\OM\django\vin\decode_vin>git add .
+
+C:\Users\OM\django\vin\decode_vin>echo "# django_in_out" >> README.md
+
+C:\Users\OM\django\vin\decode_vin>git add README.md
+
+C:\Users\OM\django\vin\decode_vin>git commit -m "first commit"
+[master (root-commit) 147199c] first commit
+ 32 files changed, 371 insertions(+)
+ create mode 100644 README.md
+ create mode 100644 db.sqlite3
+ create mode 100644 decode_vin/__init__.py
+ create mode 100644 decode_vin/__pycache__/__init__.cpython-310.pyc
+ create mode 100644 decode_vin/__pycache__/settings.cpython-310.pyc
+ create mode 100644 decode_vin/__pycache__/urls.cpython-310.pyc
+ create mode 100644 decode_vin/__pycache__/wsgi.cpython-310.pyc
+ create mode 100644 decode_vin/asgi.py
+ create mode 100644 decode_vin/settings.py
+ create mode 100644 decode_vin/urls.py
+ create mode 100644 decode_vin/wsgi.py
+ create mode 100644 manage.py
+ create mode 100644 vin_decoder/__init__.py
+ create mode 100644 vin_decoder/__pycache__/__init__.cpython-310.pyc
+ create mode 100644 vin_decoder/__pycache__/admin.cpython-310.pyc
+ create mode 100644 vin_decoder/__pycache__/apps.cpython-310.pyc
+ create mode 100644 vin_decoder/__pycache__/forms.cpython-310.pyc
+ create mode 100644 vin_decoder/__pycache__/models.cpython-310.pyc
+ create mode 100644 vin_decoder/__pycache__/services.cpython-310.pyc
+ create mode 100644 vin_decoder/__pycache__/views.cpython-310.pyc
+ create mode 100644 vin_decoder/admin.py
+ create mode 100644 vin_decoder/apps.py
+ create mode 100644 vin_decoder/forms.py
+ create mode 100644 vin_decoder/migrations/__init__.py
+ create mode 100644 vin_decoder/migrations/__pycache__/__init__.cpython-310.pyc
+ create mode 100644 vin_decoder/models.py
+ create mode 100644 vin_decoder/services.py
+ create mode 100644 vin_decoder/static/vin_decoder/style.css
+ create mode 100644 vin_decoder/templates/droplets.html
+ create mode 100644 vin_decoder/templates/index.html
+ create mode 100644 vin_decoder/tests.py
+ create mode 100644 vin_decoder/views.py
+
+C:\Users\OM\django\vin\decode_vin>git branch -M main
+
+C:\Users\OM\django\vin\decode_vin>git remote add origin https://github.com/OmRamana/django_in_out.git
+
+C:\Users\OM\django\vin\decode_vin>git push -u origin main
+Enumerating objects: 41, done.
+Counting objects: 100% (41/41), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (37/37), done.
+Writing objects: 100% (41/41), 15.08 KiB | 571.00 KiB/s, done.
+Total 41 (delta 4), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (4/4), done.
+To https://github.com/OmRamana/django_in_out.git
+ * [new branch]      main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+
+Ignore files
+
+C:\Users\OM\django\vin\decode_vin> git rm -r --cached path_to_your_folder/ 
+
+See files being tracked
+git ls-files
+
+add a new commit
+git commit -a -m "apps added to settings"
+
+delete git
+del /F /S /Q /A .git
+

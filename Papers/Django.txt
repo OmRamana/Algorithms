@@ -1,0 +1,112 @@
+Microsoft Windows [Version 10.0.19042.1415]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\OM>python --version
+Python 3.10.1
+Microsoft Windows [Version 10.0.19042.1415]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\OM>python --version
+Python 3.10.1
+
+C:\Users\OM>cd rp-portfolio
+
+C:\Users\OM\rp-portfolio>python3 -m venv venv
+Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings > Manage App Execution Aliases.
+
+
+C:\Users\OM\rp-portfolio>venv\Scripts\activate.bat
+
+(venv) C:\Users\OM\rp-portfolio>pip install Django
+Collecting Django
+  Downloading Django-4.0-py3-none-any.whl (8.0 MB)
+     |████████████████████████████████| 8.0 MB 930 kB/s
+Collecting tzdata
+  Downloading tzdata-2021.5-py2.py3-none-any.whl (339 kB)
+     |████████████████████████████████| 339 kB 939 kB/s
+Collecting sqlparse>=0.2.2
+  Downloading sqlparse-0.4.2-py3-none-any.whl (42 kB)
+     |████████████████████████████████| 42 kB 132 kB/s
+Collecting asgiref<4,>=3.4.1
+  Downloading asgiref-3.4.1-py3-none-any.whl (25 kB)
+Installing collected packages: tzdata, sqlparse, asgiref, Django
+Successfully installed Django-4.0 asgiref-3.4.1 sqlparse-0.4.2 tzdata-2021.5
+WARNING: You are using pip version 21.2.4; however, version 21.3.1 is available.
+You should consider upgrading via the 'C:\Users\OM\rp-portfolio\venv\Scripts\python.exe -m pip install --upgrade pip' command.
+
+(venv) C:\Users\OM\rp-portfolio>django-admin startproject personal_portfolio
+
+(venv) C:\Users\OM\rp-portfolio>
+
+
+
+--------------------------------------------------------------------------------------------------
+Microsoft Windows [Version 10.0.19042.1415]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\OM> cd django
+
+C:\Users\OM\django>cd mysite
+
+C:\Users\OM\django\mysite>venv\Scripts\activate.bat
+
+(venv) C:\Users\OM\django\mysite>python manage.py migrate
+Traceback (most recent call last):
+  File "C:\Users\OM\django\mysite\manage.py", line 11, in main
+    from django.core.management import execute_from_command_line
+ModuleNotFoundError: No module named 'django'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\OM\django\mysite\manage.py", line 22, in <module>
+    main()
+  File "C:\Users\OM\django\mysite\manage.py", line 13, in main
+    raise ImportError(
+ImportError: Couldn't import Django. Are you sure it's installed and available on your PYTHONPATH environment variable? Did you forget to activate a virtual environment?
+
+(venv) C:\Users\OM\django\mysite>cd mysite
+
+(venv) C:\Users\OM\django\mysite\mysite>python manage.py migrate
+C:\Users\OM\AppData\Local\Programs\Python\Python310\python.exe: can't open file 'C:\\Users\\OM\\django\\mysite\\mysite\\manage.py': [Errno 2] No such file or directory
+
+(venv) C:\Users\OM\django\mysite\mysite>cd..
+
+(venv) C:\Users\OM\django\mysite>pip install Django
+Collecting Django
+  Using cached Django-4.0-py3-none-any.whl (8.0 MB)
+Collecting asgiref<4,>=3.4.1
+  Using cached asgiref-3.4.1-py3-none-any.whl (25 kB)
+Collecting tzdata
+  Using cached tzdata-2021.5-py2.py3-none-any.whl (339 kB)
+Collecting sqlparse>=0.2.2
+  Using cached sqlparse-0.4.2-py3-none-any.whl (42 kB)
+Installing collected packages: tzdata, sqlparse, asgiref, Django
+Successfully installed Django-4.0 asgiref-3.4.1 sqlparse-0.4.2 tzdata-2021.5
+WARNING: You are using pip version 21.2.4; however, version 21.3.1 is available.
+You should consider upgrading via the 'C:\Users\OM\django\mysite\venv\Scripts\python.exe -m pip install --upgrade pip' command.
+
+(venv) C:\Users\OM\django\mysite>python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, sessions
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying sessions.0001_initial... OK
+
+(venv) C:\Users\OM\django\mysite>

@@ -1,0 +1,2 @@
+str = '@Engineer'
+print(fullUserName.translate({ord(i): None for i in '@'}))

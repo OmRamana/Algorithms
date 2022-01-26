@@ -1,0 +1,3 @@
+25e8b9e17b72a2d527b94198844c9fe2
+
+api.openweathermap.org/data/2.5/weather?q=cape town&appid=25e8b9e17b72a2d527b94198844c9fe2

@@ -1,0 +1,136 @@
+import tweepy
+import json
+import csv
+import pandas as pd
+import pyodbc
+from tweet_api import *
+
+
+def main():
+    with open('config_NoKeywords_LeeCounty.json') as f:
+        config = json.load(f)
+
+    client = build_twitter_client(config)
+
+    api = build_twitter_api(config)
+    search_string = build_search_string(config)
+    search_string += ' filter:retweets'
+    geocode = f"{config['latitude']},{config['longitude']},{config['kms']}km"
+    print(search_string)
+
+    # https://stackoverflow.com/questions/50052330/tweepy-check-if-a-tweet-is-a-retweet
+    cursor = tweepy.Cursor(api.search_tweets,
+                           q='filter:retweets',  # TODO: Find only retweetsÃ¥
+                           geocode=geocode,
+                           #    count=30,
+                           lang="en",
+                           tweet_mode='extended')
+    items = []
+    items2 = []
+    retweets = []
+    max_tweets = 20
+    count = 0
+
+    for tweet in cursor.items():
+        # encoding to get rid of characters that may not be able to be displayed
+        tweettext = str(tweet.full_text.lower().encode(
+            'ascii', errors='ignore'))
+        user = tweet.user
+        if tweettext.startswith("b'rt") == True:
+            items2.append({
+                "tweetid": tweet.id,
+                'rwtfulltext': tweet.full_text,
+                "rwtusername": tweet.user.name,
+                "userid": user.id,
+            })
+            # list comprehension
+            ds = [d["rwtfulltext"]
+                  for d in items2 if "rwtfulltext" in d][0]
+            print(ds)
+
+        tweetid = tweet.id
+        if not tweet.retweeted:
+            count = count + 1
+            items.append({
+                # "Internal Location": "Lee County, FL",
+                "userid": user.id,
+                "username": user.name,
+                # "userdescription": user.description,
+                "userscreenname": user.screen_name,
+                "userlocation": user.location,
+                # "userurl": user.url,
+                # "userfollowers": user.followers_count,
+                # "userfriends": user.friends_count,
+                # "userfavourites": user.favourites_count,
+                # "userlists": user.listed_count,
+                # "usercreated": user.created_at,
+                # "userlang": user.lang,
+                "tweetid": tweet.id,
+                # "tweetext": tweet.full_text,
+                # "tweetcreated": tweet.created_at,
+                # "retweeted": tweet.retweeted,
+                # "retweet_count": tweet.retweet_count,
+                # "favorited": tweet.favorited,
+                # "favorite_count": tweet.favorite_count,
+                # "lang": tweet.lang,
+            })
+            if count > max_tweets:
+                break
+
+    print("these are items inserting into df " + str(len(items)))
+    df = pd.DataFrame(items)
+    df = df.astype('str')
+    df = df.drop_duplicates(subset='tweetid')
+    print(str(df.head(25)))
+
+    print('this is df2')
+    df2 = pd.DataFrame(items2)
+    # print(df2.describe())
+    print(df2)
+
+    # rwts = api.get_retweeter_ids(1469944211323731972)
+    # print(rwts)
+
+    # for index, row in df.iterrows():
+    #     rwts = api.get_retweeter_ids(row['tweetid'])
+    # print(rwts)
+    # for tweet in rwts:
+    #     retweets.append({
+    #         "RetweetID": tweet.id,
+    #         "TweeterID": tweet.user.id,
+    #         "OriginalTweeterID": row['userid'],
+    #         "Date": tweet.created_at
+    #     })
+
+    # server = "dkomplexdev.database.windows.net"
+    # database = "dkomlexcountydata"
+    # username = "dkompdev"  # Server Admin
+    # password = "dKomplex1"  # Server Admin
+    # #     # A driver is for maintaining the connection Only can be done on windows to my knowledge
+    # driver = '{ODBC Driver 17 for SQL Server}'
+    # conn = pyodbc.connect('DRIVER='+driver+';SERVER='+server +
+    #                       ';PORT=1433;DATABASE='+database+';UID='+username+';PWD=' + password)
+    # # conn.autocommit = True
+    # print("connection worked \n")
+
+    # cursor = conn.cursor()
+    # cursor.fast_executemany = True
+
+    # cursor.executemany("""INSERT INTO Twitter_Core_1
+    #                 (Internal_Location, userid, username, userdescription, userscreenname,
+    #                 userlocation, userurl, userfollowers, userfriends, userfavourites, userlists,
+    #                 usercreated, userlang, tweetid, tweetext, tweetcreated, retweeted, retweet_count,
+    #                 favorited, favorite_count, lang)
+    #                 values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""", df.values.tolist())
+    # conn.commit()
+    # # cursor.close()
+    # print('large query inserted\n')
+
+    # cursor.executemany("""INSERT INTO Twitter_Core_2
+    #     (retweeter, retweetername) values(?,?)""", df2.values.tolist())
+    # conn.commit()
+    # cursor.close()
+
+
+if __name__ == '__main__':
+    main()

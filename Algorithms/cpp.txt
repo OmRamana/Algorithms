@@ -1,0 +1,95 @@
+#include <iostream>
+using namespace std;
+#include <vector> 
+
+class Student{
+    private:
+     string name;
+     double gpa;
+    
+    public:
+     Student(string newName, double newGpa)
+     {
+         name = newName;
+         gpa = newGpa;
+     }
+     
+     string getName()
+     {
+         return name;
+     }
+     
+     double getGpa()
+     {
+         return gpa;
+     }
+     
+     bool operator==(string SName){
+         return name.compare(SName)==0;
+     }
+
+    friend std::ostream& operator<< (std::ostream& out, const Student& student);
+};
+
+std::ostream& operator<< (std::ostream& out, const Student& student){
+    out <<"Student Name: "<<student.name<< "\n"<<
+    "Gpa: "<<student.gpa<< "\n";
+    return out;
+}
+
+
+Student addStudent(){
+    string name;
+    double gpa;
+    cout << "Enter the student name: ";
+    cin >>name;
+    cout << "Enter the student's gpa: ";
+    cin >>gpa;
+    Student s(name,gpa);
+    return s;
+}
+
+
+//String comparison
+     string name ="om";
+     string name2 ="omh";
+     int value = name.compare(name2);
+     cout << value << "\n";
+
+friend bool operator==(const Student &s1, const Student &s2);
+
+
+//Test Operator overloading
+ if(om=="Om"){
+          cout << "True" << "\n";
+     }else{
+          cout << "False" << "\n";
+     }
+
+
+//test the add student Method
+    vector<Student> students;
+    Student added = addStudent();
+    cout<<added<< "\n";
+
+//add the student to the vector
+    vector<Student> students;
+    
+    students.push_back(addStudent());
+    for (auto i = students.begin(); i != students.end(); ++i){
+        cout<<*i<< "\n";
+        cout<<""<< "\n";
+    }
+
+
+//Add two students and access them
+vector<Student> students;
+    
+    students.push_back(addStudent());
+    students.push_back(addStudent());
+    
+    for (auto i = students.begin(); i != students.end(); ++i){
+        cout<<*i<< "\n";
+        cout<<""<< "\n";
+    }
+

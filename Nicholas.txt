@@ -1,0 +1,10 @@
+Okay. Just so you know there is not much to it.
+ I'm just trying to generate chest x-rays that
+ would be good enough to to use as training data
+ for a classification model. This data is only
+ being used to train the discriminator network. 
+You can use any subset of the data. To start, I 
+choose to work with all of the data labeled "AP"
+ (anterior-posterior). My guess is that you may 
+need to make minor changes to architecture or
+ modify the hyperparameters

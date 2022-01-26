@@ -1,0 +1,1 @@
+Manage.py Line 9, read_detonev to load_detonev

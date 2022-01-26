@@ -1,0 +1,107 @@
+https://www.stanleyulili.com/django/how-to-install-django-on-windows/
+
+Microsoft Windows [Version 10.0.19042.1415]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\OM>cd django
+
+C:\Users\OM\django>mkdir vin
+
+C:\Users\OM\django>cd vin
+
+C:\Users\OM\django\vin>venv\Scripts\activate.bat
+The system cannot find the path specified.
+
+C:\Users\OM\django\vin>python -m venv venv
+
+C:\Users\OM\django\vin>venv\Scripts\activate.bat
+
+(venv) C:\Users\OM\django\vin>pip install Django
+Collecting Django
+  Using cached Django-4.0-py3-none-any.whl (8.0 MB)
+Collecting asgiref<4,>=3.4.1
+  Using cached asgiref-3.4.1-py3-none-any.whl (25 kB)
+Collecting sqlparse>=0.2.2
+  Using cached sqlparse-0.4.2-py3-none-any.whl (42 kB)
+Collecting tzdata
+  Using cached tzdata-2021.5-py2.py3-none-any.whl (339 kB)
+Installing collected packages: tzdata, sqlparse, asgiref, Django
+Successfully installed Django-4.0 asgiref-3.4.1 sqlparse-0.4.2 tzdata-2021.5
+WARNING: You are using pip version 21.2.4; however, version 21.3.1 is available.
+You should consider upgrading via the 'C:\Users\OM\django\vin\venv\Scripts\python.exe -m pip install --upgrade pip' command.
+
+(venv) C:\Users\OM\django\vin>python -m django --version
+
+(venv) C:\Users\OM\django\vin>django-admin startproject decode_vin
+
+(venv) C:\Users\OM\django\vin>cd decode_vin
+
+(venv) C:\Users\OM\django\vin\decode_vin>
+
+(venv) C:\Users\OM\django\vin\decode_vin>python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, sessions
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying sessions.0001_initial... OK
+
+(venv) C:\Users\OM\django\vin\decode_vin>python manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 03, 2022 - 08:29:13
+Django version 4.0, using settings 'decode_vin.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+[03/Jan/2022 08:29:33] "GET / HTTP/1.1" 200 10697
+[03/Jan/2022 08:29:34] "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+[03/Jan/2022 08:29:34] "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+[03/Jan/2022 08:29:34] "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+[03/Jan/2022 08:29:34] "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+Not Found: /favicon.ico
+[03/Jan/2022 08:29:34] "GET /favicon.ico HTTP/1.1" 404 2114
+
+(venv) C:\Users\OM\django\vin\decode_vin>python manage.py startapp vin_decoder
+
+(venv) C:\Users\OM\django\vin\decode_vin>python manage.py startapp vin_decoder
+
+(venv) C:\Users\OM\django\vin\decode_vin>cd vin_decoder
+
+(venv) C:\Users\OM\django\vin\decode_vin\vin_decoder>mkdir templates
+
+(venv) C:\Users\OM\django\vin\decode_vin\vin_decoder>cd templates
+
+(venv) C:\Users\OM\django\vin\decode_vin\vin_decoder\templates>
+
+Install an api
+(venv) C:\Users\OM\django\vin\decode_vin>pip install vpic-api
+
+
+dotenv : python-dotenv
+rest_framework : djangorestframework
+rest_framework_simplejwt : djangorestframework-simplejwt
+twilio: twilio
+bs4 :bs4
+hashids: hashid
+botocore: botocore
+decouple: python-decouple
+boto3: boto3
+
+pip install python-dotenv djangorestframework djangorestframework-simplejwt twilio bs4 hashid botocore python-decouple boto3 django-cors-headers django-phonenumber-field[phonenumbers] psycopg2 django-filter django-timezone-field hashids Pillow

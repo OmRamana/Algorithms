@@ -1,0 +1,56 @@
+
+public static String getLongestCommonPrefix(String[] strArr) {
+       if(strArr.length==0) return "";
+       // Find minimum length String
+       String minStr=getMinString(strArr); 
+       int minPrefixStrLength=minStr.length();
+       for(int i=0;i<strArr.length;i++){
+           int j;
+         for( j=0;j<minPrefixStrLength;j++){
+             if(minStr.charAt(j)!=strArr[i].charAt(j))
+                break;
+          }
+      if(j<minPrefixStrLength)
+         minPrefixStrLength=j;
+       }
+        return minStr.substring(0,minPrefixStrLength);
+     }
+ 
+ public static String getMinString(String[] strArr){
+         String minStr=strArr[0];
+           for(int i=1;i<strArr.length;i++){
+              if(strArr[i].length()<minStr.length())
+                 minStr=strArr[i];
+            }
+       return minStr;
+ }
+
+
+//Square root
+public static int Sqrt(int x){
+        double tolerance = 0.000001;
+        double estimate = 1.0;
+        while(true){
+            estimate = (estimate + x / estimate) / 2;
+            double difference = Math.abs(x - estimate*estimate);
+            if(difference <= tolerance){
+                break;
+            }
+        }
+        return (int)estimate;
+     }
+
+
+//Search for insert position
+public static int search(int arr[],int x){
+		for(int i=0;i<arr.length;i++)
+		{
+			if(arr[i]==x)
+				return i;
+			if(arr[i]>x)
+				return i;
+		}
+		return arr.length;
+	}
+
+

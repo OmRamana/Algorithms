@@ -1,0 +1,145 @@
+Microsoft Windows [Version 10.0.19042.1466]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\OM>dir
+ Volume in drive C is OS
+ Volume Serial Number is 7CCF-A14C
+
+ Directory of C:\Users\OM
+
+2022/01/13  10:59    <DIR>          .
+2022/01/13  10:59    <DIR>          ..
+2021/08/08  03:19    <DIR>          .android
+2021/09/29  17:58    <DIR>          .cache
+2021/09/03  15:09    <DIR>          .eclipse
+2021/08/08  02:55                16 .emulator_console_auth_token
+2022/01/03  09:32                49 .gitconfig
+2022/01/01  06:38    <DIR>          .idlerc
+2021/09/04  13:49    <DIR>          .jdks
+2021/08/29  16:49    <DIR>          .kindle
+2021/09/04  12:25    <DIR>          .p2
+2021/12/02  05:08    <DIR>          .RapidMiner
+2022/01/01  13:16    <DIR>          .vscode
+2021/04/23  11:56    <DIR>          3D Objects
+2021/04/23  11:56    <DIR>          Contacts
+2022/01/13  15:02    <DIR>          Desktop
+2022/01/03  09:34    <DIR>          django
+2021/12/11  15:20    <DIR>          Documents
+2022/01/11  16:30    <DIR>          Downloads
+2021/09/03  14:14    <DIR>          eclipse
+2021/09/04  12:20    <DIR>          eclipse-workspace
+2021/04/23  11:56    <DIR>          Favorites
+2021/10/09  15:33    <DIR>          IdeaProjects
+2021/04/23  11:56    <DIR>          Links
+2021/12/24  10:17    <DIR>          Music
+2021/08/17  14:28    <DIR>          OneDrive
+2022/01/03  20:07    <DIR>          Pictures
+2022/01/01  12:56    <DIR>          rp-portfolio
+2021/04/23  11:56    <DIR>          Saved Games
+2021/04/23  11:56    <DIR>          Searches
+2021/07/07  09:07    <DIR>          Tracing
+2021/11/15  00:24    <DIR>          Videos
+               2 File(s)             65 bytes
+              30 Dir(s)  425 356 181 504 bytes free
+
+C:\Users\OM>cd Desktop
+
+C:\Users\OM\Desktop>dir
+ Volume in drive C is OS
+ Volume Serial Number is 7CCF-A14C
+
+ Directory of C:\Users\OM\Desktop
+
+2022/01/13  15:02    <DIR>          .
+2022/01/13  15:02    <DIR>          ..
+2022/01/09  18:13    <DIR>          CSP
+2022/01/12  12:34               116 django_react.txt
+2022/01/13  15:19    <DIR>          js_web
+2022/01/11  09:46                41 no_sign_up.txt
+2022/01/10  07:55               126 open_wea.txt
+2022/01/10  05:57                73 Research.txt
+2022/01/04  13:44    <DIR>          S
+2022/01/01  12:59             1 389 Visual Studio Code.lnk
+2022/01/11  15:01             1 924 Zoom.lnk
+               6 File(s)          3 669 bytes
+               5 Dir(s)  425 356 181 504 bytes free
+
+C:\Users\OM\Desktop>cd js_web
+
+C:\Users\OM\Desktop\js_web>git init
+Initialized empty Git repository in C:/Users/OM/Desktop/js_web/.git/
+
+C:\Users\OM\Desktop\js_web>git add .
+
+C:\Users\OM\Desktop\js_web>git commit -m "first commit"
+[master (root-commit) 8e64cf2] first commit
+ 2 files changed, 55 insertions(+)
+ create mode 100644 index.html
+ create mode 100644 style.css
+
+C:\Users\OM\Desktop\js_web>git branch -M main
+
+C:\Users\OM\Desktop\js_web>git remote add origin https://github.com/OmRamana/bootstrap1.git
+
+C:\Users\OM\Desktop\js_web>git push -u origin main
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 943 bytes | 235.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/OmRamana/bootstrap1.git
+ * [new branch]      main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+
+C:\Users\OM\Desktop\js_web>git commit -m "weather table"
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\OM\Desktop\js_web>git add index.html
+
+C:\Users\OM\Desktop\js_web>git commit -m "weather table"
+[main c6cb69c] weather table
+ 1 file changed, 6 insertions(+), 16 deletions(-)
+
+C:\Users\OM\Desktop\js_web>git push -u origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 388 bytes | 77.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/OmRamana/bootstrap1.git
+   8e64cf2..c6cb69c  main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+
+C:\Users\OM\Desktop\js_web>git add style.css
+
+C:\Users\OM\Desktop\js_web>git push -u origin main
+Everything up-to-date
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+
+C:\Users\OM\Desktop\js_web>git commit -m "final for Api"
+[main 8b2b984] final for Api
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+C:\Users\OM\Desktop\js_web>git push -u origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 320 bytes | 106.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/OmRamana/bootstrap1.git
+   c6cb69c..8b2b984  main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+
+C:\Users\OM\Desktop\js_web>

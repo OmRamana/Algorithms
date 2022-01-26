@@ -1,0 +1,51 @@
+import pandas as pd
+
+df = pd.read_csv('data.csv')
+
+print(df.head(10))
+print(" ")
+print(df.iloc[3].values.tolist())
+
+
+print(list(map(int, results)))
+
+
+results = '51,075,194'
+print(list([int(item) for item in results.split(',')]))
+
+
+
+#print(list(map(int, results[0].split(','))))
+#result_str = results.replace(',', '')
+#print(result_str)
+#print(list(map(int, result_str)))
+
+
+def read_csv(filename,row):
+    df = pd.read_csv(filename)
+    row_list = df.iloc[row].values.tolist()
+    return row_list
+  
+print(read_csv("internet_access.csv", 7))  
+
+14.30
+
+
+https://www.crummy.com/software/BeautifulSoup/bs3/documentation.html
+
+unemployment_county = unemployment_soup.find_all("td", {"class": "table_row_header"})
+unemployment_value = unemployment_soup.find_all("td", {"class": "datavalue"})
+#using beautiful soup to find the data from tdbody (table) the website
+
+county_unemployment = []
+
+for county in unemployment_soup.select("td.table_row_header"):
+    county = int(county.contents[1].get_text(strip=True)[:-1])
+    print(county)
+    stuff.append(county)
+    
+df = pd.DataFrame(county_unemployment)
+df.columns = ['temp']
+
+
+

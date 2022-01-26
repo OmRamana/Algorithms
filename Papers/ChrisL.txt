@@ -1,0 +1,1 @@
+Hi there- are you available tomorrow afternoon for a lesson on syncing between github, terminal and VSC?

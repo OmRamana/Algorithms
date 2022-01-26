@@ -1,0 +1,80 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+#include <string>
+#include <vector> 
+
+class Student{
+    private:
+     string name;
+     double gpa;
+    
+    public:
+     Student(string newName, double newGpa)
+     {
+         name = newName;
+         gpa = newGpa;
+     }
+     
+     string getName()
+     {
+         return name;
+     }
+     
+     double getGpa()
+     {
+         return gpa;
+     }
+     
+     bool operator==(string SName){
+         return name.compare(SName)==0;
+     }
+     
+      friend std::ostream& operator<< (std::ostream& out, const Student& student);
+    };
+    
+    
+std::ostream& operator<< (std::ostream& out, const Student& student){
+    out <<"Student Name: "<<student.name<< "\n"<<
+    "Gpa: "<<student.gpa<< "\n";
+    return out;
+}
+
+Student addStudent(){
+    string name;
+    double gpa;
+    cout << "Enter the student name: ";
+    cin >>name;
+    cout << "Enter the student's gpa: ";
+    cin >>gpa;
+    Student s(name,gpa);
+    return s;
+}
+
+     
+int main() {
+    // Write C++ code here
+    /* Student om("Om", 2.67);
+     
+     if(om=="Om"){
+          cout << "True" << "\n";
+     }else{
+          cout << "False" << "\n";
+     }
+    
+    cout<<om<< "\n"; */
+   
+   /* vector<Student> students;
+    students.push_back(addStudent());
+    students.push_back(addStudent());
+    
+    for (auto i = students.begin(); i != students.end(); ++i){
+        cout<<*i<< "\n";
+        cout<<""<< "\n";
+    } */
+    
+    
+    
+    
+    return 0;
+}
