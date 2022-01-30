@@ -105,3 +105,5 @@ decouple: python-decouple
 boto3: boto3
 
 pip install python-dotenv djangorestframework djangorestframework-simplejwt twilio bs4 hashid botocore python-decouple boto3 django-cors-headers django-phonenumber-field[phonenumbers] psycopg2 django-filter django-timezone-field hashids Pillow
+
+1pm Friday (MST) Meetings

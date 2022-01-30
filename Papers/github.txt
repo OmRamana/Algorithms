@@ -128,3 +128,77 @@ git commit -a -m "apps added to settings"
 delete git
 del /F /S /Q /A .git
 
+List all commits
+git log --pretty=format:"%h - %an, %ar : %s"
+
+
+Pivoting
+
+(venv) C:\Users\OM\django\forms\form>git log --pretty=format:"%h - %an, %ar : %s"
+37d78d5 - Om, 3 minutes ago : comment added for test
+7517e9a - Om, 7 days ago : table labels added to view
+8ac9645 - Om, 7 days ago : loading Api data to a Webpage
+51b4f6e - Om, 8 days ago : search input down
+8c1b00e - Om, 8 days ago : remove form label
+cc8cb08 - Om, 8 days ago : bootstrap django form
+c05b49b - Om, 8 days ago : positioning elements
+08b03ef - Om, 8 days ago : form styling
+4e45924 - Om, 9 days ago : gathered posted data
+dcaf710 - Om, 9 days ago : form rendered
+d3eb458 - Om, 9 days ago : form create
+6010486 - Om, 9 days ago : app init
+
+(venv) C:\Users\OM\django\forms\form>git branch wayout 7517e9a
+
+(venv) C:\Users\OM\django\forms\form>git checkout wayout
+Switched to branch 'wayout'
+
+(venv) C:\Users\OM\django\forms\form>git commit -a -m "A comment on wayout branch"
+[wayout ba88816] A comment on wayout branch
+ 1 file changed, 2 insertions(+)
+
+(venv) C:\Users\OM\django\forms\form>git push -u origin wayout
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 378 bytes | 189.00 KiB/s, done.
+Total 4 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+remote:
+remote: Create a pull request for 'wayout' on GitHub by visiting:
+remote:      https://github.com/OmRamana/django_form/pull/new/wayout
+remote:
+To https://github.com/OmRamana/django_form.git
+ * [new branch]      wayout -> wayout
+Branch 'wayout' set up to track remote branch 'wayout' from 'origin'.
+
+(venv) C:\Users\OM\django\forms\form>
+
+Check out to another commit on another branch
+C:\Users\OM\django\forms\form>git checkout ba888161b384c84ac4810831cdfad20d43367e5e
+Note: switching to 'ba888161b384c84ac4810831cdfad20d43367e5e'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at ba88816 A comment on wayout branch
+
+C:\Users\OM\django\forms\form>
+
+
+List commits from a specific branch while excluding ones from the main
+git log wayout --not main
+
